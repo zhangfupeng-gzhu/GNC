@@ -12,7 +12,7 @@ interpolate method              = near
 5d-4 0.99999
 ##================================================================
 ##specify the directory and name of the auxilary file
-cfs dir =../../common_data/cfs_34
+cfs dir =../../common_data/cfuns_34
 ##================================================================
 ##-------mass of the massive black hole
 mbh			= 4d6

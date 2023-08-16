@@ -13,7 +13,7 @@ ifeq ($(COMPILE), ifort)
 	      -L$(libdir) -I$(libdir) -lgnc \
 	      -check bounds -check uninit -check pointers \
 		   -traceback -debug -fpp 
-	FLAG+= -f90=ifort 
+	#FLAG+= -f90=ifort 
 
 	ifeq ($(maximum_compatible), 1)
 		FLAG+=-align none

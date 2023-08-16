@@ -15,7 +15,7 @@ outdir:=./
 ifeq ($(COMPILE), ifort)
 	FLAG=  -O3 -traceback -check bounds -check uninit \
 	      -check pointers -fpp  
-	FLAG+=   -f90=ifort
+	#FLAG+=   -f90=ifort
 	ifeq ($(maximum_compatible), 1)
 		FLAG+=-align none
 	endif
