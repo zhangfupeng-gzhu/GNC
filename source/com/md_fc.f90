@@ -63,7 +63,7 @@ contains
         case (fc_spacing_linear)
             str_fc_spacing="LINEAR"
         end select
-        write(unit=*, fmt="(A15, I15, 5E15.5)") str_fc_spacing, this%nbin, &
+        write(unit=*, fmt="(A15, I15, 4E15.5, I15)") str_fc_spacing, this%nbin, &
             this%xmin, this%xmax, this%xstep, this%nsw, this%ns
         write(unit=*, fmt="(20A20)") "X", "FX", "FXW", "cfx", "cfxw"
         do i=1, this%nbin
@@ -256,7 +256,7 @@ contains
         !original_use_weight=fc%use_weight
         !fc%use_weight=.true.
         !if(fc%flaglog.eq.fc_spacing_log)then
-        call get_dstr_num_in_each_bin(xtp(1:n),n,fc%xmin,fc%xstep, fc%nbin, &
+        call get_dstr_num_in_each_bin(xtp(1:n),n,xbg,fc%xstep, fc%nbin, &
 			fc%nb, fc%ns)
         !fc%fx=dble(fc%nb)/fc%xstep            
         !    do i=1, fc%nbin
@@ -272,7 +272,7 @@ contains
         !end if
         
 	    do i=1,fc%nbin
-		    fc%fx(i)=fc%nb(i)/dble(fc%nsw)/dble(fc%xstep)
+		    fc%fx(i)=fc%nb(i)/dble(fc%ns)/dble(fc%xstep)
            ! fc%fxw(i)=fc%nbw(i)/fc%ns/dble(fc%xstep)
             if(fc%fx(i).ne.0)then
                 fc%pn(i)=fc%fx(i)/sqrt(dble(fc%nb(i)))
@@ -350,16 +350,16 @@ contains
         !call fc%get_hst(xtp,w,n)
         !fc%use_weight=original_use_weight
     
-        call get_dstr_num_in_each_bin(xtp(1:n),n,fc%xmin,fc%xstep, fc%nbin, &
+        call get_dstr_num_in_each_bin(xtp(1:n),n,xbg,fc%xstep, fc%nbin, &
         fc%nb, fc%ns)
         !fc%fx=dble(fc%nb)/fc%xstep  
-        call get_dstr_num_in_each_bin_weight(xtp(1:n),w(1:n),n,fc%xmin,fc%xstep, fc%nbin, &
+        call get_dstr_num_in_each_bin_weight(xtp(1:n),w(1:n),n,xbg,fc%xstep, fc%nbin, &
         fc%nbw, fc%nsw)
         !fc%fxw=fc%nbw/fc%xstep
 
         do i=1,fc%nbin
-            fc%fx(i)=fc%nb(i)/dble(fc%nsw)/dble(fc%xstep)
-            fc%fxw(i)=fc%nbw(i)/fc%ns/dble(fc%xstep)
+            fc%fx(i)=fc%nb(i)/dble(fc%ns)/dble(fc%xstep)
+            fc%fxw(i)=fc%nbw(i)/fc%nsw/dble(fc%xstep)
             if(fc%fx(i).ne.0)then
                 fc%pn(i)=fc%fx(i)/sqrt(dble(fc%nb(i)))
                 fc%pnw(i)=fc%fxw(i)/sqrt(dble(fc%nb(i)))
