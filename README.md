@@ -4,7 +4,7 @@
 
   If you have used GNC in your work, please cite the following reference: 
 
-  Zhang, fupeng, Ameau-senaro Pau, arXiv:2306.03924.
+  Zhang fupeng, Ameau-senaro Pau, arXiv:2306.03924.
  
   The code is written in Fortran 2003, and has been tested using gfortran/openmpi or ifort/mpich.
  
