@@ -1,29 +1,29 @@
 ##number of threads to run ini and main===========================
 12
 ##================================================================
-##Do not change the following two setting currently
+##Do not change the following two settings currently
 MODEL OF DE and DJ              = FAST
 interpolate method              = near
 ##================================================================
-#the minimum and maximum dimenionless angular momentum 
+#the minimum and maximum dimensionless angular momentum 
 #jmin should be larger than the value set in generating the
-#auxilary cfs file
+#auxiliary cfs file
 #jmin jmax
 5d-4 0.99999
 ##================================================================
-##specify the directory and name of the auxilary file
+##specify the directory and name of the auxiliary file
 cfs dir =../../common_data/cfuns_34
 ##================================================================
 ##-------mass of the massive black hole
 mbh			= 4d6
 ##================================================================
-##-------the maximum and minium dimenional energy
+##-------the maximum and minium dimensional energy
 emin_factor =0.03d0
 emax_factor =1d5
 ##-------the dimenional energy of the outer boundary
 eboundary   =0.05d0
-#jbin_type =LIN/LOG-------linear/logithmic bin of angular momemtum
-#LOG bin is strongly recommanded
+#jbin_type =LIN/LOG-------linear/logarithmic bin of angular momentum
+#LOG bin is strongly recommended
 jbin type   =LOG
 #isotropic boundary angular momentum distribution
 bd fj       =ISO
@@ -35,9 +35,9 @@ SEED_VALUE						= 100
 SAME_INI_SEED					= 1
 ##================================================================
 #gx_bins: the number of bins for distribution function
-#         recommanding gx_bins=12-48
+#         recommending gx_bins=12-48
 #dc_bins: the number of bins for diffusion coefficients
-#         recommanding grid_bins=48-120
+#         recommending grid_bins=48-120
 #         Note that we require dc_bins/(number of threads)=Integer
 #gx_bins dc_bins
 24  72
@@ -65,7 +65,7 @@ Loss cone    					= 0
 ##================================================================
 CLONE_SCHEME					= 1
 ##if clone_scheme>=1, set the minimum x_0 below which 
-##clone scheme is implimented
+##clone scheme is implemented
 clone x0                        = 1
 ##================================================================
 ##chattery=0, quite, 
