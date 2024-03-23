@@ -890,7 +890,7 @@ subroutine get_rh_vh_nh(mbh, rh, nh, vh)
 	real(8) mbh, rh, nh, vh
 	real(8),parameter::rgc=8.32d3
 	real(8),parameter::r0=3.1
-	real(8),parameter::n0=2d4
+	real(8),parameter::n0=3d4
 
 	rh=r0*(Mbh/4d6)**0.55*pc	
 	vh=sqrt(mbh/rh)    
