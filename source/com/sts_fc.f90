@@ -107,7 +107,7 @@ subroutine set_range(x,n,xmin,xmax,flag)
 		 allocate(abin2d(rxn,ryn))
 	
 		 call set_range(xx,rxn,xmin,xmax,bflag)
-		 call set_range(yy,rxn,ymin,ymax,bflag)
+		 call set_range(yy,ryn,ymin,ymax,bflag)
 	
 		 call bin2(x, y, n, xmin,xmax, rxn, ymin, ymax, ryn, abin2d, bflag)	 	
 	
@@ -130,13 +130,13 @@ subroutine set_range(x,n,xmin,xmax,flag)
 			case(1)
 	
 				do i=1, rxn
-					do j=1, rxn
+					do j=1, ryn
 						if(i.eq.1.or.i.eq.rxn) then
 							xstep=(xx(2)-xx(1))/2d0
 						else
 							xstep=(xx(2)-xx(1))
 						end if
-						if(j.eq.1.or.j.eq.rxn)then
+						if(j.eq.1.or.j.eq.ryn)then
 							ystep=(yy(2)-yy(1))/2d0
 						else
 							ystep=yy(2)-yy(1)
@@ -153,13 +153,13 @@ subroutine set_range(x,n,xmin,xmax,flag)
 				fabin2D=dble(abin2D)/xstep/ystep
 			case(1)
 				do i=1, rxn
-					do j=1, rxn
+					do j=1, ryn
 						if(i.eq.1.or.i.eq.rxn) then
 							xstep=(xx(2)-xx(1))/2d0
 						else
 							xstep=(xx(2)-xx(1))
 						end if
-						if(j.eq.1.or.j.eq.rxn)then
+						if(j.eq.1.or.j.eq.ryn)then
 							ystep=(yy(2)-yy(1))/2d0
 						else
 							ystep=yy(2)-yy(1)
@@ -202,7 +202,7 @@ subroutine cal_bin2_arr_weight(x, y, weight, n, xmin, xmax, rxn, ymin, ymax, ryn
  	allocate(abin2d(rxn,ryn))
 
 	call set_range(xx,rxn,xmin,xmax,bflag)
-	call set_range(yy,rxn,ymin,ymax,bflag)
+	call set_range(yy,ryn,ymin,ymax,bflag)
  	call bin2_weight(x, y, weight, n, xmin,xmax, rxn, ymin, ymax, ryn,  abin2d, bflag)	 
 	!print*, "abin2d"	
 	!do i=1, rxn
@@ -225,13 +225,13 @@ subroutine cal_bin2_arr_weight(x, y, weight, n, xmin, xmax, rxn, ymin, ymax, ryn
 			fabin2D=dble(abin2D)/sumi/xstep/ystep
 		case(1)
 			do i=1, rxn
-				do j=1, rxn
+				do j=1, ryn
 					if(i.eq.1.or.i.eq.rxn) then
 						xstep=(xx(2)-xx(1))/2d0
 					else
 						xstep=(xx(2)-xx(1))
 					end if
-					if(j.eq.1.or.j.eq.rxn)then
+					if(j.eq.1.or.j.eq.ryn)then
 						ystep=(yy(2)-yy(1))/2d0
 					else
 						ystep=yy(2)-yy(1)
@@ -248,13 +248,13 @@ subroutine cal_bin2_arr_weight(x, y, weight, n, xmin, xmax, rxn, ymin, ymax, ryn
 		case(1)
 
 			do i=1, rxn
-				do j=1, rxn
+				do j=1, ryn
 					if(i.eq.1.or.i.eq.rxn) then
 						xstep=(xx(2)-xx(1))/2d0
 					else
 						xstep=(xx(2)-xx(1))
 					end if
-					if(j.eq.1.or.j.eq.rxn)then
+					if(j.eq.1.or.j.eq.ryn)then
 						ystep=(yy(2)-yy(1))/2d0
 					else
 						ystep=yy(2)-yy(1)
@@ -271,8 +271,6 @@ subroutine cal_bin2_arr_weight(x, y, weight, n, xmin, xmax, rxn, ymin, ymax, ryn
 	!end do
 
 end subroutine
-
-
 
 subroutine return_idxy(x,y,xmin,xmax,ymin,ymax,nx,ny,idx,idy,flag)
 	implicit none
