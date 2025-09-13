@@ -1,6 +1,6 @@
 # GNC: A Monte Carlo code for dynamics of Galactic Nuclear star Cluster with a central massive black hole
 
-GNC is an open-source **Monte Carlo code** designed to simulate the complex dynamical evolution of stars and compact objects orbiting the supermassive black holes (SMBHs) at the centers of galaxies. Developed by Fupeng Zhang and Pau Amaro-Seoane, GNC provides a powerful tool for researchers in astrophysics and stellar dynamics.
+GNC is an open-source **Monte Carlo code** designed to simulate the complex dynamical evolution of stars and compact objects orbiting the supermassive black holes (SMBHs) at the centers of galaxies. Developed by **Fupeng Zhang** and **Pau Amaro Seoane**, GNC provides a powerful tool for researchers in astrophysics and stellar dynamics.
 
 -----
 
@@ -55,7 +55,8 @@ The GNC code was used to investigate the long-term evolution of the structure of
 If you have any questions, find a bug, or have suggestions for improvements, please feel free to contact the authors:
 
   * **Fupeng Zhang:** `zhangfupeng@gzhu.edu.cn`
-  * **Pau Amaro-Seoane:** `amaro@upv.es`
+  * **Pau Amaro Seoane:** `amaro@upv.es`
 
   
+
 
